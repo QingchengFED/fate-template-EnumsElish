@@ -1,0 +1,20 @@
+{
+  "name": "{{ name }}",
+  "version": "1.0.0",
+  "description": "{{ description }}",
+  "private": true,
+  "scripts": {
+    "dev": "node build_script/dev.js",
+    "build": "node build_script/build.js",
+    "deploy": "node build_script/deploy.js"
+  },
+  "dependencies": {
+
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-batch": "^1.0.5",
+    "gulp-clean": "^0.3.1",
+    "gulp-concat": "^2.6.0"
+  }
+}
