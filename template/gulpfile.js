@@ -2,20 +2,12 @@ var config = require('./config');
 var gulp = require('gulp');
 var gulpLoadPlugins = require('gulp-load-plugins');
 var $ = gulpLoadPlugins(); //一次性载入所有的plugins
+var allTasks = require('./utils/tasks');
 
 
-var allTasks = {};
 
-allTasks.buildCss = function (src, dest){
-    if(!src || !dest)
-        throw new Error('can not find src or dest for task BuildCss')
+//write task build
+gulp.task('build', function(){});
 
-    return gulp.src(src)
-        .pipe($.less())
-        .pipe(gulp.dest(dest));
-}
-
-
-gulp.task('buildCss', function(){
-    return allTasks.buildCss()
-})
+//write task prePublish
+gulp.task('prePublish', function(){});

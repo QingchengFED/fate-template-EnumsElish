@@ -13,8 +13,11 @@
   },
   "devDependencies": {
     "gulp": "^3.9.1",
-    "gulp-batch": "^1.0.5",
     "gulp-clean": "^0.3.1",
-    "gulp-concat": "^2.6.0"
+    "gulp-sequence": "^0.4.6",
+    "gulp-less": "^3.3.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-print": "^2.0.1",
+    "gulp-uglify": "^2.0.0"
   }
 }

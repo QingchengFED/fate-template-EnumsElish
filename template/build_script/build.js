@@ -1,1 +1,5 @@
-console.log('this is a build script');
+var gulp = require('gulp');
+require('../gulpfile');
+
+if(gulp.tasks.build)
+    gulp.start('build');
