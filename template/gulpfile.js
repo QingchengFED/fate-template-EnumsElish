@@ -9,7 +9,7 @@ var path = require('path');
 gulp.task('lessBuild', function () {
     return gulp.src(config.base.lessSrc)
           .pipe($.less())
-          // .pipe($.replace(/'\.\.\/img\/([\w\/_\-\.]+)'/g, "'/static/[project_name]/img/$1'"))
+          // .pipe($.replace(/(?:'|")\.\.\/img\/([\w\/_\-\.]+)(?:'|")/g, "'/static/[project_name]/img/$1'"))
           .pipe(gulp.dest(path.resolve(config.base.dist, 'css')))
           .pipe($.notify('less build'));
 });

@@ -11,7 +11,7 @@ var baseConfig = {
 module.exports = {
     base: baseConfig,
     build: {
-        dist: path.resolve(__dirname, '/path/to/static/[project_name]')
+        dist: path.resolve(__dirname, '../../../../applications/[app_name]/static/[project_name]')
     },
     prePublish: {
         dist: path.resolve(__dirname, '../dist/')
