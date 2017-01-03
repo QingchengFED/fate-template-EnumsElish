@@ -9,7 +9,7 @@ var path = require('path');
 gulp.task('lessBuild', function () {
     return gulp.src(config.base.lessSrc)
           .pipe($.less())
-          // .pipe($.replace(/(?:'|")\.\.\/img\/([\w\/_\-\.]+)(?:'|")/g, "'/static/[project_name]/img/$1'"))
+          // .pipe($.replace(/(?:'|")(?:\.\.|\/static\/[project_name])\/(?:images|img)\/([\w\/_\-\.]+)(?:'|")/g, '"/static/[project_name]/img/$1"'))
           .pipe(gulp.dest(path.resolve(config.base.dist, 'css')))
           .pipe($.notify('less build'));
 });
@@ -17,7 +17,7 @@ gulp.task('lessBuild', function () {
 gulp.task('htmlBuild', function () {
     return gulp.src(config.base.backendTplSrc)
           .pipe($.useref())
-          // .pipe($.if('*.js', $.uglify()))
+          // .pipe($.if('*.js', $.replace(/(?:'|")(?:\.\.|\/static\/[project_name])\/(?:images|img)\/([\w\/_\-\.]+)(?:'|")/g, '"/static/[project_name]/img/$1"')))
           .pipe(gulp.dest(path.resolve(config.base.dist, 'backend_templates')))
           .pipe($.notify('html build'));
 });
@@ -25,6 +25,7 @@ gulp.task('htmlBuild', function () {
 gulp.task('templatesBuild', function () {
     return gulp.src(config.base.frontendTplSrc)
           .pipe($.angularTemplatecache({standalone:true}))
+          // .pipe($.replace(/(?:'|")(?:\.\.|\/static\/[project_name])\/(?:images|img)\/([\w\/_\-\.]+)(?:'|")/g, '"/static/[project_name]/img/$1"'))
           .pipe(gulp.dest(path.resolve(config.base.dist, 'js')))
           .pipe($.notify('templates build'));
 });
